@@ -1,0 +1,16 @@
+Anotações Laravel.
+erros comuns (como não cometê-los) -> 
+•⁠  ⁠sempre nomear(nomes mesmo) as rotas. Usar nomes para referenciar as rotas ao invés de usar caminhos,
+    o que facilita refatoração de rotas.
+•⁠  ⁠⁠sempre validar dados de entrada. Método validate da classe Illuminate. 
+    Exemplo… $request->validate([ 
+        ‘name’ => [‘string’,  ‘max:255’], 
+        ‘email’ => [‘email’, ‘max:255’, Rule::unique(User::class)->ignore($this->user()->id)], 
+    ]) 
+    e usar apenas os campos validados… $request->user()->fill($request->validated())
+•⁠  ⁠⁠usar eloquent de forma correta, ao invés de usar query sql na unha.
+•⁠  ⁠⁠utilizar funções helpers do laravel(nativas). 
+•⁠  ⁠⁠utilizar sistema de autenticação integrado. Laravelbreeze, fortfy…
+
+
+...
